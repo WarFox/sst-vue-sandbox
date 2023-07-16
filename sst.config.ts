@@ -4,7 +4,7 @@ import { ExampleStack } from "./stacks/ExampleStack";
 export default {
   config(_input) {
     return {
-      name: "vuenotes",
+      name: "sst-vue-sandbox",
       region: "eu-west-1",
     };
   },

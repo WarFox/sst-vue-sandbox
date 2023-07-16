@@ -1,5 +1,5 @@
 {
-  "name": "@vuenotes/core",
+  "name": "@sst-vue-sandbox/core",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
