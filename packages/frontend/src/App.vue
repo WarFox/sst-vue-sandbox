@@ -18,7 +18,7 @@ import HelloWorld from './components/HelloWorld.vue'
   </header>
 
   <div className="App">
-    <p>You clicked me 8 times.</p>
+    <p>You clicked me {{ count }} times.</p>
     <button @click="onClick()">Click Me!</button>
   </div>
 
@@ -107,5 +107,15 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+.App {
+    text-align: center;
+}
+p {
+    margin-top: 0;
+    font-size: 20px;
+}
+button {
+    font-size: 48px;
 }
 </style>
