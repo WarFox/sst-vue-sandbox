@@ -17,6 +17,7 @@ export function ExampleStack({ stack }: StackContext) {
       },
     },
     routes: {
+      "GET /": "packages/functions/src/get-count.main",
       "POST /": "packages/functions/src/lambda.main",
     },
   });
@@ -29,7 +30,6 @@ export function ExampleStack({ stack }: StackContext) {
     environment: {
       // Pass in the API endpoint to our app
       VITE_APP_API_URL: api.url,
-      VUE_APP_API_URL: api.url,
     },
   });
 

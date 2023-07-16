@@ -1,6 +1,40 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import { ref, onMounted } from 'vue'
+
+const count = ref(0)
+
+async function fetchCount() {
+  try {
+    const response = await fetch(import.meta.env.VITE_APP_API_URL)
+    const data = await response.text()
+    return Number(data)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+async function onClick() {
+  try {
+    const response = await fetch(import.meta.env.VITE_APP_API_URL, {
+      method: 'POST'
+    })
+    const data = await response.text()
+    count.value = Number(data)
+  } catch (error) {
+    // enter your logic for when there is an error (ex. error toast)
+    console.log(error)
+  }
+}
+
+onMounted(async () => {
+  try {
+    count.value = await fetchCount()
+  } catch (error) {
+    console.log(error)
+  }
+})
 </script>
 
 <template>
@@ -24,27 +58,6 @@ import HelloWorld from './components/HelloWorld.vue'
 
   <RouterView />
 </template>
-
-<script lang="ts">
-export default {
-  data() {
-    return {
-      count: 0
-    }
-  },
-  methods: {
-    onClick() {
-      fetch(import.meta.env.VITE_APP_API_URL, {
-        method: 'POST'
-      })
-        .then((response) => response.text())
-        .then((data) => {
-          this.count = data
-        })
-    }
-  }
-}
-</script>
 
 <style scoped>
 header {
@@ -109,13 +122,13 @@ nav a:first-of-type {
   }
 }
 .App {
-    text-align: center;
+  text-align: center;
 }
 p {
-    margin-top: 0;
-    font-size: 20px;
+  margin-top: 0;
+  font-size: 20px;
 }
 button {
-    font-size: 48px;
+  font-size: 48px;
 }
 </style>
