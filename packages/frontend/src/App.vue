@@ -12,6 +12,7 @@ async function fetchCount() {
     return Number(data)
   } catch (error) {
     console.log(error)
+    return 0
   }
 }
 
