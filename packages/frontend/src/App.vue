@@ -17,8 +17,34 @@ import HelloWorld from './components/HelloWorld.vue'
     </div>
   </header>
 
+  <div className="App">
+    <p>You clicked me 8 times.</p>
+    <button @click="onClick()">Click Me!</button>
+  </div>
+
   <RouterView />
 </template>
+
+<script lang="ts">
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    onClick() {
+      fetch(import.meta.env.VITE_APP_API_URL, {
+        method: 'POST'
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          this.count = data
+        })
+    }
+  }
+}
+</script>
 
 <style scoped>
 header {

@@ -28,6 +28,7 @@ export function ExampleStack({ stack }: StackContext) {
     errorPage: "redirect_to_index_page",
     environment: {
       // Pass in the API endpoint to our app
+      VITE_APP_API_URL: api.url,
       VUE_APP_API_URL: api.url,
     },
   });
