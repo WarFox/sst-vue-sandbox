@@ -13,6 +13,8 @@ import ClickCount from './components/ClickCount.vue';
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/counter">Counter</RouterLink>
+        <RouterLink to="/todos">Todos</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>

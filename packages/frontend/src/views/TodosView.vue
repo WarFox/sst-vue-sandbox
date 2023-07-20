@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import AvatarStack from '@/components/AvatarStacks.vue'
+import TodoList from '@/components/TodoList.vue'
 </script>
 
 <template>
   <main>
-    <AvatarStack />
+    <TodoList />
   </main>
 </template>
